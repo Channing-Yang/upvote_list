@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { UpvoteList } from './Upvote/UpvoteList';
 import { UpvoteListsData } from './Upvote/constants';
 import { UpvoteDataType } from './Upvote/types';
-import './App.css';
 
 function App() {
   const [lists, setLists] = useState<UpvoteDataType[]>(() => {
@@ -45,16 +44,17 @@ function App() {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className='container'>
       <h1>Upvote Lists</h1>
       {
         lists.map((list, index) => {
           const { isSelected, upvoteNum, id } = list;
 
           return (
-            <div key={`list_${index}`}>
+            <div key={`list_${id}`}>
               <h2>{`List ${index + 1}`}</h2>
               <UpvoteList 
+                listId={id}
                 isSelected={isSelected} 
                 upvoteNum={upvoteNum} 
                 handleAdd={handleAdd(id)}

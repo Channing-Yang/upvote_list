@@ -4,6 +4,7 @@ export type UpvoteType = {
 };
 
 export type UpvoteListType = {
+  listId: number;
   isSelected: boolean;
   upvoteNum: number;
   onClick: () => void;
@@ -11,6 +12,7 @@ export type UpvoteListType = {
 };
 
 export type UpvoteArrayType = {
+  listId: number;
   isSelected: boolean;
   onClick: () => void;
   num: number;

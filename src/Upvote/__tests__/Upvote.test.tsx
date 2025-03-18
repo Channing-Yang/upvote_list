@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { UpvoteList } from '../UpvoteList';
 import { 
@@ -13,6 +12,7 @@ describe('<UpvoteList />', () => {
     const mockClickUpvote = jest.fn();
     const { getByTestId } = render(
       <UpvoteList 
+        listId={0}
         isSelected={false}
         upvoteNum={1}
         handleAdd={jest.fn()}
@@ -31,6 +31,7 @@ describe('<UpvoteList />', () => {
     const mockClickUpvote = jest.fn();
     const { getByTestId } = render(
       <UpvoteList 
+        listId={0}
         isSelected={false}
         upvoteNum={1}
         handleAdd={mockClickUpvote}
@@ -47,6 +48,7 @@ describe('<UpvoteList />', () => {
   it('has Upvote showing the correct color', () => {
     const { getByTestId, rerender } = render(
       <UpvoteList 
+        listId={0}
         isSelected={false}
         upvoteNum={1}
         handleAdd={jest.fn()}
@@ -61,6 +63,7 @@ describe('<UpvoteList />', () => {
 
     rerender(
       <UpvoteList 
+        listId={0}
         isSelected={true}
         upvoteNum={1}
         handleAdd={jest.fn()}

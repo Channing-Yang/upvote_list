@@ -4,17 +4,17 @@ export const UpvoteListsData: UpvoteDataType[] = [
   {
     id: 0,
     isSelected: false,
-    upvoteNum: 2,
+    upvoteNum: 1,
   },
   {
     id: 1,
     isSelected: false,
-    upvoteNum: 2,
+    upvoteNum: 1,
   },  
   {
     id: 2,
     isSelected: false,
-    upvoteNum: 2,
+    upvoteNum: 1,
   },
 ];
 

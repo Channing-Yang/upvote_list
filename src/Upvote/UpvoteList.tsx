@@ -4,6 +4,7 @@ import { Upvote } from './Upvote';
 import './style.scss';
 
 const UpvoteArray: React.FC<UpvoteArrayType> = ({
+  listId,
   isSelected,
   onClick,
   num,
@@ -13,7 +14,7 @@ const UpvoteArray: React.FC<UpvoteArrayType> = ({
       {
         Array.from({ length: num }).map((_, index) => {
           return (
-            <Upvote key={index} isSelected={isSelected} onClick={onClick} />
+            <Upvote key={`${listId}_upvote_${index}`} isSelected={isSelected} onClick={onClick} />
           );
         })
       }
@@ -21,12 +22,13 @@ const UpvoteArray: React.FC<UpvoteArrayType> = ({
   );
 };
 
-export const UpvoteList: React.FC<UpvoteListType> = ({ isSelected, upvoteNum, onClick, handleAdd }) => {
+export const UpvoteList: React.FC<UpvoteListType> = ({ listId, isSelected, upvoteNum, onClick, handleAdd }) => {
   return (
     <div className='upvoteList'>
       <div className='upvoteArray'>
         <div>
           <UpvoteArray
+            listId={listId}
             isSelected={isSelected}
             onClick={onClick}
             num={upvoteNum}
